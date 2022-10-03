@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+void qsorte(float *v, int tam){
+int aux=0;
+  for(int i=0;i<tam;i++){
+     for(int j=tam-1;j>=i;j--){
+            if(v[i]>=v[j]){
+                aux = *v[i];
+                *v[i]=*v[j];
+                *v[j]=aux;
+            }
+     }
+     }
+}
+int main(){
+    float *x;
+    int n;
+    scanf("%d",n);
+    x = malloc(n*sizeof(float));
+    for(int i=0;i<n;i++){
+        scanf("%f",&x[i]);
+    }
+    qsorte(x,n);
+    for(int i=0;i<n;i++){
+        printf("%.f ",x[i]);
+
+    }
+    free(x);
+    return 0;
+}
